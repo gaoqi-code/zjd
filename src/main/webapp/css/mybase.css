@@ -1,0 +1,22 @@
+html, body{ height:100%;margin: 0px;padding: 0px;font-family: 微软雅黑;}
+ul, menu, dir {display: block;list-style-type: disc;-webkit-margin-before: 0em;-webkit-margin-after: 0em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;-webkit-padding-start:0px;}
+.leftD{float:left;}
+.clear{clear: both;}
+.c_center{text-align: center;}
+.font18{font-size: 16px;}
+.layui-btn{
+    /*display: inline-block;*/
+    /*height: 38px;*/
+    /*line-height: 38px;*/
+    /*padding: 0 18px;*/
+    background-color: #04be02;
+    /*color: #fff;*/
+    /*white-space: nowrap;*/
+    /*text-align: center;*/
+    /*font-size: 14px;*/
+    /*border: none;*/
+    /*!*border-radius: 2px;*!*/
+    /*cursor: pointer;*/
+    /*opacity: .9;*/
+    /*filter: alpha(opacity=90);*/
+}

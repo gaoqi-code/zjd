@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="AccusationDao">
+
+	<insert id="addAccusation"  parameterType="com.bbc.entity.Accusation" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO h_accusation (category_code,`desc`,add_time,user_id) VALUES(#{categoryCode},#{desc},NOW(),#{userId})
+	</insert>
+
+</mapper>

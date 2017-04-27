@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="OrdersDao">
+
+	<insert id="addOrder"  parameterType="com.bbc.entity.Orders" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO h_orders (order_no,product_name,data_status,total_fee,user_id,add_time,update_time) VALUES(#{orderNo},#{productName},0,#{totalFee},#{userId},NOW(),NOW())
+	</insert>
+
+    <update id="updateOrder" parameterType="map">
+        UPDATE h_orders SET data_status = #{dataStatus} WHERE user_id = #{userId} AND id = #{id}
+    </update>
+
+    <update id="updateOrderByOrderNo" parameterType="map">
+        UPDATE h_orders SET data_status = #{dataStatus} WHERE order_no = #{orderNo} AND data_status = 0
+    </update>
+
+    <update id="updateOrderById" parameterType="map">
+        UPDATE h_orders SET order_no = #{orderNo} WHERE id = #{id}
+    </update>
+
+    <select id="getOrderByOrderNo" parameterType="map"  resultType="com.bbc.entity.Orders">
+        SELECT product_name AS productName,data_status AS dataStatus,total_fee AS totalFee,order_no AS orderNo,user_id AS userId FROM h_orders
+        WHERE order_no = #{orderNo}
+    </select>
+
+    <select id="getOrderByUserIdAndOrderId" parameterType="map"  resultType="com.bbc.entity.Orders">
+        SELECT product_name AS productName,data_status AS dataStatus,total_fee AS totalFee,order_no AS orderNo FROM h_orders
+        WHERE id = #{orderId} AND user_id = #{userId}
+    </select>
+
+    <select id="getOrderByUserId" parameterType="int"  resultType="com.bbc.entity.Orders">
+        SELECT id,product_name AS productName,data_status AS dataStatus,total_fee AS totalFee,order_no AS orderNo FROM h_orders
+        WHERE user_id = #{userId} AND data_status = 100 LIMIT 1;
+    </select>
+
+</mapper>

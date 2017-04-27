@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="UserDao">
+
+	<insert id="addUser"  parameterType="com.bbc.entity.User" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO h_user (openid,unionid,add_time,update_time,parent_id,level,data_status) VALUES(#{openid},#{unionid},NOW(),NOW(),#{parentId},#{level},2)
+	</insert>
+
+	<select id="getUserByUnionid" parameterType="string"  resultType="com.bbc.entity.User">
+		SELECT id,unionid,data_status AS  dataStatus,parent_id AS parentId,level,balance FROM h_user WHERE unionid =#{unionid} AND data_status = 2
+	</select>
+
+	<select id="getUserByParentId" parameterType="string"  resultType="com.bbc.entity.User">
+		SELECT id,unionid,data_status AS  dataStatus,parent_id AS parentId,level,balance FROM h_user WHERE id =#{parentId} AND data_status = 2
+	</select>
+
+
+	<update id="updateUserJianBalance" parameterType="map">
+		UPDATE h_user SET balance = balance - #{totalFee} WHERE id = #{id}
+	</update>
+
+	<update id="updateUserJiaBalance" parameterType="map">
+		UPDATE h_user SET balance = balance + #{totalFee} WHERE id = #{id}
+	</update>
+
+	<insert id="addUserBalanceLog"  parameterType="map" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO h_user_balance_log (user_id,data_type,money,add_time,data_desc) VALUES(#{userId},#{dataType},${money},NOW(),#{dataDesc})
+	</insert>
+
+</mapper>
