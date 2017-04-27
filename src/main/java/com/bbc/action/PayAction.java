@@ -208,7 +208,7 @@ public class PayAction extends BaseController {
 				//用户余额不足
 				return "redirect:/toError/1000.html";
 			}
-            Orders orders = ordersService.addOrder(attach, new BigDecimal(totalFee), user.getId());
+            Orders orders = ordersService.addOrder(attach, new BigDecimal(totalFee), user.getId(),2);
 
 			req.setAttribute("totalFee", totalFee);
 
@@ -403,7 +403,7 @@ public class PayAction extends BaseController {
         parameters.put("remark" , req.getParameter("remark"));
 		parameters.put("goodsType",req.getParameter("goodsType"));
 		//生成订单
-		Orders orders = ordersService.addOrder("充值"+orderAmt+"元", new BigDecimal(orderAmt),userId);
+		Orders orders = ordersService.addOrder("充值"+orderAmt+"元", new BigDecimal(orderAmt),userId,1);
 		parameters.put("orderNo",orders.getOrderNo());
 		String sign = WXSignUtils.createSign("utf-8",parameters);
 		System.out.println("sign = " + sign);

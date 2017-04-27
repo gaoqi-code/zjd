@@ -26,11 +26,12 @@ public class OrdersServiceImpl implements OrdersService {
     private HongBaoDao hongBaoDao;
 
     @Override
-    public Orders addOrder(String productName, BigDecimal totalFee, int userId){
+    public Orders addOrder(String productName, BigDecimal totalFee, int userId,int dataType){
         Orders orders = new Orders();
         orders.setProductName(productName);
         orders.setTotalFee(totalFee);
         orders.setUserId(userId);
+        orders.setDataType(dataType);
         ordersDao.addOrder(orders);
         String orderNo = OrderUtil.getOrderNo(orders.getId());
         orders.setOrderNo(orderNo);

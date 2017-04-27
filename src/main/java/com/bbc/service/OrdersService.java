@@ -10,7 +10,7 @@ import java.math.BigDecimal;
  */
 public interface OrdersService {
 
-    public Orders addOrder(String productName, BigDecimal totalFee, int userId);
+    public Orders addOrder(String productName, BigDecimal totalFee, int userId,int dataType);
 
     public Orders getOrderByUserIdAndOrderId(int userId,int orderId);
 

@@ -6,7 +6,7 @@
 <mapper namespace="OrdersDao">
 
 	<insert id="addOrder"  parameterType="com.bbc.entity.Orders" useGeneratedKeys="true" keyProperty="id">
-		INSERT INTO h_orders (order_no,product_name,data_status,total_fee,user_id,add_time,update_time) VALUES(#{orderNo},#{productName},0,#{totalFee},#{userId},NOW(),NOW())
+		INSERT INTO h_orders (order_no,product_name,data_status,total_fee,user_id,add_time,update_time,data_type) VALUES(#{orderNo},#{productName},0,#{totalFee},#{userId},NOW(),NOW(),#{dataType})
 	</insert>
 
     <update id="updateOrder" parameterType="map">
