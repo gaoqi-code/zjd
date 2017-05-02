@@ -27,7 +27,7 @@
     </style>
 </head>
 <body style="background-color: #F0F0F0;">
-<div class="s_top"><img style="width: 100%;" src="/images/sc/top_gg.png"></div>
+<div class="s_top"><a href="/product.html"><img style="width: 100%;" src="/images/sc/top_gg.png"></a></div>
 <div class="productlist">
     <ul>
         <li>

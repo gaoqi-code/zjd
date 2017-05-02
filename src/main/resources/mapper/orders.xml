@@ -28,12 +28,12 @@
 
     <select id="getOrderByUserIdAndOrderId" parameterType="map"  resultType="com.bbc.entity.Orders">
         SELECT product_name AS productName,data_status AS dataStatus,total_fee AS totalFee,order_no AS orderNo FROM h_orders
-        WHERE id = #{orderId} AND user_id = #{userId}
+        WHERE id = #{orderId} AND user_id = #{userId} AND data_type = 2
     </select>
 
     <select id="getOrderByUserId" parameterType="int"  resultType="com.bbc.entity.Orders">
         SELECT id,product_name AS productName,data_status AS dataStatus,total_fee AS totalFee,order_no AS orderNo FROM h_orders
-        WHERE user_id = #{userId} AND data_status = 100 LIMIT 1;
+        WHERE user_id = #{userId} AND data_status = 100 AND data_type = 2 LIMIT 1;
     </select>
 
 </mapper>

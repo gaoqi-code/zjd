@@ -6,7 +6,7 @@
 <mapper namespace="UserDao">
 
 	<insert id="addUser"  parameterType="com.bbc.entity.User" useGeneratedKeys="true" keyProperty="id">
-		INSERT INTO h_user (openid,unionid,add_time,update_time,parent_id,level,data_status) VALUES(#{openid},#{unionid},NOW(),NOW(),#{parentId},#{level},2)
+		INSERT INTO h_user (openid,unionid,add_time,update_time,parent_id,level,data_status,balance) VALUES(#{openid},#{unionid},NOW(),NOW(),#{parentId},#{level},2,0)
 	</insert>
 
 	<select id="getUserByUnionid" parameterType="string"  resultType="com.bbc.entity.User">
