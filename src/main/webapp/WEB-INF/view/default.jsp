@@ -27,8 +27,8 @@
     <div>登录过期，正在重新登录...</div>
 </div>
 <script>
-//    location.href="http://test.open580.com/toUser/0/0.html";
-location.href="http://192.168.1.102/toUser/0/0.html";
+    location.href="http://test.open580.com/toUser/0/0.html";
+//location.href="http://192.168.1.102/toUser/0/0.html";
 </script>
 </body>
 </html>

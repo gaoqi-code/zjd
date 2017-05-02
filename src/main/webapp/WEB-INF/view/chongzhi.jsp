@@ -18,6 +18,9 @@
 			$(".s_price span").click(function () {
 				$("#orderAmt").val($(this).html());
 				$(".s_price").find("span").each(function(index,element){
+
+
+                    、
 					$(element).removeClass("bgRed");
 				});
 				$(this).addClass("bgRed");

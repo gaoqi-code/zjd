@@ -326,7 +326,7 @@
 				<finalName>zjd</finalName>
 				<resources>
 					<resource>
-						<directory>src/main/resources/online</directory>
+						<directory>src/main/resources/pro</directory>
 						<includes>
 							<include>**/*.xml</include>
 							<include>**/*.properties</include>

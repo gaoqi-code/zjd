@@ -4,16 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>确认支付</title>
-	<link href="css/mybase.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="js/common/jquery/jquery-1.9.1.js"></script>
-	<style>
-		.payTitle{text-align: center;}
-		.content{text-align: center;}
-		.contentdesc{margin:10px;text-align: center;font-size: 16px;}
-	</style>
+	<%--<script type="text/javascript" src="/js/common/jquery/jquery-1.9.1.js"></script>--%>
 </head>
-<body>
-<form id="testPay" action="http://pay.open580.com/pay/payOrder.do" method="post" target="_blank"  accept-charset="UTF-8" style="border-color: gray; padding-top: 40px;">
+<body onload="autoSubmit();">
+<form id="myForm"  action="http://pay.open580.com/pay/payOrder.do" method="post"  accept-charset="UTF-8" style="display:none;">
 	<input id="orderNo" name="orderNo" type="text" value="${formParam.orderNo}" />
 	<table border="1px">
 		<tr>
@@ -66,6 +60,10 @@
 		<input id="submitBtn" type="submit" />
 	</p>
 </form>
-
+<script>
+	function autoSubmit(){
+		document.getElementById("myForm").submit();
+	}
+</script>
 </body>
 </html>
