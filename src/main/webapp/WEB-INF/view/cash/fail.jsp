@@ -21,7 +21,7 @@
 <div class="tbg">
 	<div style="height:13em;"></div>
 	<div class="hb_list">
-		<p>提现失败，请重试！</p>
+		<p>提现失败，请重试！${info}</p>
 		<p>如有疑问，请联系<a href="/toserver.html" style="color: yellow;">客服</a>。</p>
 	</div>
 </div>

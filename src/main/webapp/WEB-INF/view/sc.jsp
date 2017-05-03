@@ -33,28 +33,29 @@
         <li>
             <div class="c_li">
                 <div class="p_image"><img src="/images/sc/products/1.jpg"></div>
-                <div class="p_title">两口子肉松饼</div>
-                <div class="p_s"><span class="price">&yen;100.00元</span><span><a class="linkServer" href="/toserver.html">联系客服</a></span></div>
+                <div class="p_title">德芙巧克力礼盒 丝滑牛奶252g新旧包装随机发货装</div>
+                <div class="p_s"><span class="price">&yen;29.90元</span><span><a class="linkServer" href="/toserver.html">联系客服</a></span></div>
             </div>
         </li>
         <li>
             <div class="c_li">
                 <div class="p_image"><img src="/images/sc/products/2.jpg"></div>
-                <div class="p_title">两口子肉松饼</div>
-                <div class="p_s"><span class="price">&yen;100.00元</span><span><a class="linkServer" href="/toserver.html">联系客服</a></span></div>
+                <div class="p_title">三只松鼠 夏威夷果265g零食坚果炒货干果奶油味开口</div>
+                <div class="p_s"><span class="price">&yen;23.90元</span><span><a class="linkServer" href="/toserver.html">联系客服</a></span></div>
             </div>
         </li>
         <li>
             <div class="c_li">
                 <div class="p_image"><img src="/images/sc/products/3.jpg"></div>
-                <div class="p_title">两口子肉松饼</div>
-                <div class="p_s"><span class="price">&yen;100.00元</span><span><a class="linkServer" href="/toserver.html">联系客服</a></span></div>
+                <div class="p_title">两口子肉松饼 美食特产糕点喜饼零食旱点心480g</div>
+                <div class="p_s"><span class="price">&yen;17.90元</span><span><a class="linkServer" href="/toserver.html">联系客服</a></span></div>
             </div>
         </li>
         <li>
             <div class="c_li">
                 <div class="p_image"><img src="/images/sc/products/4.jpg"></div>
-                <div class="p_title">两口子肉松饼</div>
+                <div class="p_title">三只松鼠 开心果225g休闲
+                    两口子肉松饼</div>
                 <div class="p_s"><span class="price">&yen;100.00元</span><span><a class="linkServer" href="/toserver.html">联系客服</a></span></div>
             </div>
         </li>

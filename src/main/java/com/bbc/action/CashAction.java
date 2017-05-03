@@ -62,6 +62,7 @@ public class CashAction extends BaseController {
 			cashService.addCash(cash);
 			return "view/cash/success";
 		}else{
+			req.setAttribute("info","可提现金额不足！");
 			return "view/cash/fail";
 		}
 	}

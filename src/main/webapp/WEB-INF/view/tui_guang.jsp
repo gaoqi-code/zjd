@@ -36,7 +36,7 @@
     </div>
     <div class="fxFoot">
         <p>推广二维码，一起拿佣金。</p>
-        <p>单次最少获得1元,，最高获得10元！！！</p>
+        <p>最高获得10元！！！</p>
     </div>
     <div class="clear"></div>
 </div>

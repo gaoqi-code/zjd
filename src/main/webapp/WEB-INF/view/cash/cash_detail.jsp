@@ -22,10 +22,11 @@
 <div class="tbg">
 	<div style="height:13em;"></div>
 	<div class="hb_list">
+		<input value="${balance}" id="accountBalance" type="hidden">
         <div class="op"><div class="opOper">账户余额：${balance}点券</div></div>
         <div class="op"><div class="opOper">可提资产：${balance}元</div></div>
 		<div class="op"><div class="opOper">冻结资产：0元</div></div>
-		<div class="op aDIV"><a href="/cash/addCash.html">确认转出</a></div>
+		<div class="op aDIV"><a href="javascript:tixian();">确认转出</a></div>
 	</div>
 
 	<div class="hb_list">
@@ -36,34 +37,13 @@
 </div>
 <jsp:include page="../common/bottom.jsp"></jsp:include>
 <script type="text/javascript">
-	$(function () {
-		setTimeout("ajaxstatus()", 500);
-	});
-	layui.define(['layer', 'form'], function(exports){
-		var layer = layui.layer;
-	});
-	function ajaxstatus() {
-		var url = "pay/getUserOrderInfo.json";
-		$.get(url,{},function(data){
-					if(data.code==200){
-						var orderId = data.obj.id;
-						var orderNo = data.obj.orderNo;
-						var tsContent = '<div style="background-color: #FFF;text-align: center;padding: 2em;"><a href="pay/toChb.html?orderId='+orderId+'&orderNo='+orderNo+'">您有一个红包还未打开</a></div>';
-						layer.open({
-							type: 1
-							,title: "提示信息" //不显示标题栏
-							,closeBtn: false
-							,area: '15em;'
-							,shade: 0.3
-							,id: 'LAY_layuipro2' //设定一个id，防止重复弹出
-							,resize: false
-							,btnAlign: 'c'
-							,content: tsContent
-						});
-						return;
-					}
-				}
-		);
+	function tixian() {
+		var balance = $("#accountBalance").val();
+		if(balance<10){
+			alert("提现不能少于10点券！");
+		}else{
+			location.href="/cash/addCash.html";
+		}
 	}
 </script>
 </body>

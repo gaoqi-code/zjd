@@ -10,30 +10,34 @@ public class HBMoneyUtil {
 
     public static BigDecimal getMoney(int montyLevel){
         Random ra =new Random();
-        int m1Int = ra.nextInt(montyLevel)+1;
-        if(m1Int==9){
-            m1Int = 5;
+        int m1Int = 0;
+        if(montyLevel==10){
+            m1Int = ra.nextInt(montyLevel-5)+1;
+        }else if(montyLevel==20){
+            m1Int = ra.nextInt(montyLevel-12)+1;
+            if(m1Int<3){
+                m1Int = 3;
+            }
+        }else if(montyLevel==50){
+            m1Int = ra.nextInt(montyLevel-30)+1;
+            if(m1Int==10||m1Int==12||m1Int==14){
+                m1Int=30;
+            }else if(m1Int==3){
+                m1Int=10;
+            }else if(m1Int<3){
+                m1Int=10;
+            }
+        }else if(montyLevel==100){
+            m1Int = ra.nextInt(montyLevel-82)+1;
+            if (m1Int==10){
+                m1Int = 101;
+            }else if(m1Int==12){
+                m1Int = 50;
+            }else if(m1Int<3){
+                m1Int = 3;
+            }
         }
-        if(m1Int==8){
-            m1Int = 5;
-        }
-        if(m1Int==7){
-            m1Int = 6;
-        }
-        if(m1Int==6){
-            m1Int = 4;
-        }
-        if(m1Int==16){
-            m1Int = 5;
-        }
-        if(m1Int==18){
-            m1Int = 4;
-        }
-        if(m1Int==19){
-            m1Int = 8;
-        }
-
-        if(montyLevel>20){
+        if(montyLevel>100){
             m1Int = 2;
         }
         BigDecimal m1 = new BigDecimal(m1Int);

@@ -31,11 +31,11 @@
 </head>
 <body>
 <div class="tishi" style="margin-top:2em; float: left;"><a href="javascript:void(0);">ID：${user.id}</a></div>
-<div class="tishi" style="margin-top:4em;"><a href="javascript:void(0);">推广赚钱</a></div>
+<div class="tishi" style="margin-top:4em;"><a href="/toTuiG.html">推广赚钱</a></div>
 <div class="tbg">
 	<div style="height:8em;">
 	</div>
-	<div class="gdgg"><marquee behavior="scroll" contenteditable="true" onstart="this.firstChild.innerHTML+=this.firstChild.innerHTML;" scrollamount="3">公告：平台免费代理。推广的用户每交易一次，您将收到一笔佣金，最小1元，最高10元！</marquee></div>
+	<div class="gdgg"><marquee behavior="scroll" contenteditable="true" onstart="this.firstChild.innerHTML+=this.firstChild.innerHTML;" scrollamount="3">公告：平台免费代理。推广的用户每交易一次，您将收到一笔佣金，最高10元！</marquee></div>
 	<div style="height:1em;">
 	</div>
 	<div class="emwz">
@@ -51,7 +51,7 @@
 				<a href="pay/test.html?attach=50yuan&totalFee=50"><img src="./images/btn/pay_50.png" /></a>
 			</div>
 			<div class="hbh">
-				<a href="pay/test.html?attach=99yuan&totalFee=99"><img src="./images/btn/pay_99.png" /></a>
+				<a href="pay/test.html?attach=100yuan&totalFee=100"><img src="./images/btn/pay_99.png" /></a>
 			</div>
 			<div class="clear"></div>
 		</div>

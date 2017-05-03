@@ -8,22 +8,22 @@
 
 <div class="bottomCss">
  <div class="currentBottomSELCss">
-  <a href="product.html">支付</a>
+  <a href="/product.html">支付</a>
  </div>
  <div class="currentBottomSELCss">
-  <a href="toMy.html">我的</a>
+  <a href="/toMy.html">我的</a>
   <%--<a href="myhb.html">红包</a>--%>
  </div>
  <%--<div class="currentBottomSELCss">--%>
   <%--<a href="mypay.html">记录</a>--%>
  <%--</div>--%>
  <div class="currentBottomSELCss">
-  <a href="toTuiG.html">赚钱</a>
+  <a href="/toTuiG.html">赚钱</a>
  </div>
  <div class="currentBottomSELCss">
-  <a href="toserver.html">客服</a>
+  <a href="/toserver.html">客服</a>
  </div>
  <div class="currentBottomSELCss">
-  <a href="nologin/toAccusation1/1.html">投诉</a>
+  <a href="/nologin/toAccusation1/1.html">投诉</a>
  </div>
 </div>

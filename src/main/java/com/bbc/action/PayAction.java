@@ -283,15 +283,15 @@ public class PayAction extends BaseController {
 						if(user1J != null){
 							user2J = userService.getUserByParentId(user1J.getParentId());
 						}
-						BigDecimal user1YJ = new BigDecimal(1);
-						BigDecimal user2YJ = new BigDecimal(1);
 						/**
 						 * 分发佣金
 						 */
 						BigDecimal orderTotalFee = orders.getTotalFee();
-						if(orderTotalFee.compareTo(new BigDecimal(20))==0){
-							user1YJ = new BigDecimal(2);
-						}
+						BigDecimal user1YJ = orderTotalFee.multiply(new BigDecimal("0.1"));
+						BigDecimal user2YJ = orderTotalFee.multiply(new BigDecimal("0.05"));
+//						if(orderTotalFee.compareTo(new BigDecimal(20))==0){
+//							user1YJ = new BigDecimal(2);
+//						}
 						//一级返佣
 						if(user1J!=null){
 //							temp = ClientCustomSSL.clientCustomSLL(ContantKey.mchId,ContantKey.url_3,getXML(orderNo+"Y"+user1J.getId(),user1J.getOpenid(),user1YJ,ip));

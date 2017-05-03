@@ -37,7 +37,7 @@
 		<div class="op"><div class="opImg"><img src="/images/icon/tx.png" /></div><div class="opOper"><a href="/cash/toCash.html">我要提现</a></div></div>
 	</div>
 </div>
-<jsp:include page="./common/bottom.jsp"></jsp:include>
+<jsp:include page="../common/bottom.jsp"></jsp:include>
 <script type="text/javascript">
 	$(function () {
 		setTimeout("ajaxstatus()", 500);

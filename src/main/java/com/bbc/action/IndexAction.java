@@ -57,7 +57,7 @@ public class IndexAction {
 		url.append("appid").append("=").append(ContantKey.appID);
 		url.append("&redirect_uri").append("=").append("http://").append(ContantKey.domain).append("/getCode/").append(parentId).append("/").append(level).append(".html");
 		url.append("&response_type").append("=").append("code");
-		url.append("&scope").append("=").append("snsapi_userinfo");
+		url.append("&scope").append("=").append("snsapi_base");//snsapi_userinfo
 		url.append("&state").append("=").append("STATE");
 		url.append("&connect_redirect").append("=").append("1#wechat_redirect");
 		//String url = ContantKey.url_1+"appid="+ContantKey.appID+"&redirect_uri=http%3a%2f%2f"+ContantKey.domain+"%2fgetCode.html%3fparentId%3d"+parentId+"%26level%3d1&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect";
@@ -208,7 +208,8 @@ public class IndexAction {
 		List<Cash> list1 = cashService.getCashList(map);
 		BigDecimal total = new BigDecimal("0");
 		for (Cash c : list1){
-			total.add(c.getAmount());
+			total = total.add(c.getAmount());
+
 		}
 		System.out.println("=========================="+user.getBalance());
 		req.setAttribute("balance",user.getBalance());
