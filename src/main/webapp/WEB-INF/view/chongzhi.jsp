@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta content="telephone=no" name="format-detection" />
 	<title>确认支付</title>
 	<link href="/css/mybase.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="/js/common/jquery/jquery-1.9.1.js"></script>
@@ -18,9 +19,6 @@
 			$(".s_price span").click(function () {
 				$("#orderAmt").val($(this).html());
 				$(".s_price").find("span").each(function(index,element){
-
-
-                    、
 					$(element).removeClass("bgRed");
 				});
 				$(this).addClass("bgRed");

@@ -2,10 +2,12 @@ package com.bbc.action;
 
 import com.alibaba.fastjson.JSON;
 import com.bbc.contants.ContantKey;
+import com.bbc.entity.Cash;
 import com.bbc.entity.Orders;
 import com.bbc.entity.User;
 import com.bbc.entity.WX;
 
+import com.bbc.service.CashService;
 import com.bbc.service.HongBaoService;
 import com.bbc.service.OrdersService;
 import com.bbc.service.UserService;
@@ -20,6 +22,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("")
@@ -29,6 +34,8 @@ public class IndexAction {
 	private UserService userService;
 	@Autowired
 	private HongBaoService hongBaoService;
+	@Autowired
+	private CashService cashService;
 	/**
 	 * Created by gonglixun on 2016/12/13.
 	 * 跳转到网站首页
@@ -194,8 +201,18 @@ public class IndexAction {
 	public String toMy(HttpServletRequest req) {
 		User curentUser = (User)req.getSession().getAttribute("user");
 		User user =  userService.getUserByUnionid(curentUser.getUnionid());
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("userId",user.getId());
+		map.put("dataStatus",1);
+
+		List<Cash> list1 = cashService.getCashList(map);
+		BigDecimal total = new BigDecimal("0");
+		for (Cash c : list1){
+			total.add(c.getAmount());
+		}
 		System.out.println("=========================="+user.getBalance());
 		req.setAttribute("balance",user.getBalance());
+		req.setAttribute("total",total);
 		return "view/my";
 	}
 

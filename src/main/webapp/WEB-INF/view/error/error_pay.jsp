@@ -18,24 +18,24 @@
     <link rel="stylesheet" type="text/css" href="css/mybase.css">
     <style type="text/css">
         .tbg{background: url("../images/jdbg.png") center no-repeat;background-position: 50% 0px;background-size: 100%; height: 100%;width: 100%;}
-        .errorContent{text-align: center;padding-top: 10em;}
-        .errorContent>a{padding: 5px;}
-        .errorContent>a:HOVER {background-color: #c40000;color: #FFF;}
+        .errorContent{text-align: center;padding-top: 10em;color: yellow;}
+        .errorContent>a{padding: 10px 20px;color:red; border: 1px solid #dddddd;background-color: yellow;}
+        .errorContent>a:HOVER {background-color: #c40000;color:#FFF;}
     </style>
 </head>
 <body style="background-color: #FFF;">
 <div class="tbg">
-    <div style="height:9em;"></div>
+    <div style="height:8em;"></div>
     <div class="errorContent">
         <c:if test="${code == 1000}">
-            抱歉，您的点券不足，请<a href="/pay/toChongzhi.html" >充值</a>后砸蛋！
+            抱歉，您的点券不足，请充值后砸蛋！
         </c:if>
         <c:if test="${code == 2001}">
             系统检测到您的订单异常，请联系客服！
         </c:if>
-        <p>剩余点券：${balance}</p>
+        <p>剩余点券：${param.balance}</p>
         <a href="/pay/toChongzhi.html" >立即充值</a>
-        <a href="javascript:history.go(-1);" >返回上一页</a>
+        <%--<a href="javascript:history.go(-1);" >返回上一页</a>--%>
         <p>注：充值1点券=1积分。点券可提现，1点券=1元</p>
         <p>提现2小时内到账。</p>
     </div>

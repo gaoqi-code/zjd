@@ -14,7 +14,7 @@
 	</select>
 
 	<select id="getUserByParentId" parameterType="string"  resultType="com.bbc.entity.User">
-		SELECT id,unionid,data_status AS  dataStatus,parent_id AS parentId,level,balance FROM h_user WHERE id =#{parentId} AND data_status = 2
+		SELECT id,unionid,openid,data_status AS  dataStatus,parent_id AS parentId,level,balance FROM h_user WHERE id =#{parentId} AND data_status = 2
 	</select>
 
 

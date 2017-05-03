@@ -11,22 +11,21 @@
 	<style type="text/css">
 		.tbg{background: url("../images/jdbg.png") center no-repeat;background-position: 50% 0px;background-size: 100%; height: 100%;width: 100%;}
 		.hbh img{width:19em;}
-		.hb_list{padding-left: 15px;}
+		.hb_list{padding-left:30px;padding-right:30px;}
 		.hb_list p{color: #FFF;}
-		.op{color: #FFF;}
+        .op{color: #FFF;line-height: 35px;}
+        .aDIV a{color:red;border: 1px solid #dddddd;background-color: yellow;padding: 5px;}
 	</style>
 	<title>个人中心</title>
 </head>
 <body>
 <div class="tbg">
 	<div style="height:13em;"></div>
-	<div class="top">
-		<div class="yuInfo">余额：${balance}元</div>
-	</div>
 	<div class="hb_list">
-		<div class="op"><div class="opOper">可转出资产：${balance}>元</div></div>
-		<div class="op"><div class="opOper">冻结的资产：0元</div></div>
-		<div class="op" style="color: blue;"><a href="/cash/addCash.html">确认转出</a></div>
+        <div class="op"><div class="opOper">账户余额：${balance}点券</div></div>
+        <div class="op"><div class="opOper">可提资产：${balance}元</div></div>
+		<div class="op"><div class="opOper">冻结资产：0元</div></div>
+		<div class="op aDIV"><a href="/cash/addCash.html">确认转出</a></div>
 	</div>
 
 	<div class="hb_list">

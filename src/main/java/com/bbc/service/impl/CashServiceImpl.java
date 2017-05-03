@@ -37,4 +37,9 @@ public class CashServiceImpl implements CashService{
     public List<Cash> getCashList(Map<String, Object> map) {
         return cashDao.getCashList(map);
     }
+
+    @Override
+    public Cash getCashById(int id) {
+        return cashDao.getCashById(id);
+    }
 }

@@ -206,7 +206,7 @@ public class PayAction extends BaseController {
 			User userBalance = userService.getUserByUnionid(user.getUnionid());
 			if(userBalance.getBalance()==null||userBalance.getBalance().compareTo(new BigDecimal(totalFee))==-1){
 				//用户余额不足
-				return "redirect:/toError/1000.html";
+				return "redirect:/toError/1000.html?balance="+userBalance.getBalance();
 			}
             Orders orders = ordersService.addOrder(attach, new BigDecimal(totalFee), user.getId(),2);
 

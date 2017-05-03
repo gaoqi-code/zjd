@@ -22,9 +22,11 @@ public class CashDao extends BaseDao<Cash>{
 
 
 	public List<Cash> getCashList(Map<String,Object> map){
-		return this.getAllByPage("",map);
+		return this.getAllByPage("CashDao.getCashList",map);
 	}
 
-
+	public Cash getCashById(int id){
+		return this.getInfoById("CashDao.getCashById",id);
+	}
 
 }

@@ -11,7 +11,7 @@ public class UserActInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request,HttpServletResponse response, Object handler) throws Exception {
 		String url = request.getServletPath();
-		if(url.indexOf("toDefault")!=-1||url.indexOf("toserver")!=-1||url.indexOf("back.json")!=-1||url.indexOf("nologin")!=-1){
+		if(url.indexOf("toDefault")!=-1||url.indexOf("toserver")!=-1||url.indexOf("back.json")!=-1||url.indexOf("nologin")!=-1||url.indexOf("manage")!=-1){
 			return true;
 		}else if(url.indexOf("toUser")>-1||url.indexOf("getCode")>-1){
 			return true;

@@ -9,16 +9,23 @@
 		INSERT INTO u_cash (user_id,amount,data_status,remark,add_time) VALUES(#{userId},#{amount},#{dataStatus},#{remark},NOW())
 	</insert>
 
-	<select id="getCashList" parameterType="string"  resultType="com.bbc.entity.Cash">
-		SELECT id,amount,data_status,remark FROM h_user WHERE user_id =#{userId}
-		<if test="#{dataStatus != 0}">
-			AND data_status = 2
+	<select id="getCashList" parameterType="map"  resultType="com.bbc.entity.Cash">
+		SELECT id,amount,data_status AS dataStatus,remark,add_time AS addTime FROM u_cash WHERE 1=1
+		<if test="userId != null">
+			AND user_id = #{userId}
 		</if>
-		LIMIT 10;
+		<if test="dataStatus != null">
+			AND data_status = #{dataStatus}
+		</if>
+		LIMIT 100;
+	</select>
+
+	<select id="getCashById" parameterType="int" resultType="com.bbc.entity.Cash">
+		SELECT amount,user_id AS userId,data_status AS dataStatus FROM u_cash WHERE id = #{id}
 	</select>
 
 	<update id="update" parameterType="map">
-		UPDATE u_cash SET data_status =#{dataStatus} ,update_time = #{updateTime} WHERE id = #{id} AND user_id = #{userId}
+		UPDATE u_cash SET data_status =#{dataStatus} ,update_time = NOW(),remark = #{remark} WHERE id = #{id} AND user_id = #{userId}
 	</update>
 
 

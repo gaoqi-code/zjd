@@ -17,4 +17,7 @@ public interface CashService {
 
     public List<Cash> getCashList(Map<String,Object> map);
 
+
+    public Cash getCashById(int id);
+
 }

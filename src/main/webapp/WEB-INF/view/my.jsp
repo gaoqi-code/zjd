@@ -1,3 +1,4 @@
+<%@ page import="java.math.BigDecimal" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -30,7 +31,8 @@
 <div class="tbg">
 	<div class="top">
 		<img class="myheader" src="/images/portrait.jpg">
-		<div class="yuInfo">余额：${balance}元</div>
+		<div class="yuInfo">余额：${balance}点券</div>
+		<div class="yuInfo">待提现：${total}元</div>
 	</div>
 	<div class="hb_list">
 		<div class="op"><div class="opImg"><img src="/images/icon/cz.png" /></div><div class="opOper"><a href="/pay/toChongzhi.html">我要充值</a></div></div>
@@ -51,7 +53,7 @@
 					if(data.code==200){
 						var orderId = data.obj.id;
 						var orderNo = data.obj.orderNo;
-						var tsContent = '<div style="background-color: #FFF;text-align: center;padding: 2em;"><a href="pay/toChb.html?orderId='+orderId+'&orderNo='+orderNo+'">您有一个红包还未打开</a></div>';
+						var tsContent = '<div style="background-color: #FFF;text-align: center;padding: 2em;"><a href="pay/toChb.html?orderId='+orderId+'&orderNo='+orderNo+'">您有一个金蛋还未砸</a></div>';
 						layer.open({
 							type: 1
 							,title: "提示信息" //不显示标题栏
